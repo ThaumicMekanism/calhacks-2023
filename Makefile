@@ -1,4 +1,11 @@
 all: start
+NAME=flashy
+
+build:
+	docker build -t ${NAME} .
 
 start:
-	docker-compose up --build
+	docker run -p 3000:3000 ${NAME}
+
+clean:
+	docker image rm -f ${NAME}

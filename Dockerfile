@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:16-alpine
+FROM node:20-alpine
 RUN mkdir -p /app
 WORKDIR /app
 
