@@ -1,0 +1,14 @@
+version: "2"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000
