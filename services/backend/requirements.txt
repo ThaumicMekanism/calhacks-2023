@@ -32,3 +32,4 @@ python-dotenv==0.21.0
 redis==4.5.5
 openai==0.27.8
 pandas==2.0.2
+regex==2023.6.3
