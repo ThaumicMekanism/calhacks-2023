@@ -32,7 +32,7 @@ class GetUserInput(Resource):
 class UserInputList(Resource):
     def get(self):
         user_inputs = get_all_user_inputs()
-        user_input_list = [{"id": user_input.id, "text": user_input.text} for user_input in user_inputs]
+        user_input_list = [{"id": user_input.id, "text": user_input.text, "created_at": user_input.created_at, "updated_at": user_input.updated_at} for user_input in user_inputs]
         return user_input_list, 200
 
     def post(self):
