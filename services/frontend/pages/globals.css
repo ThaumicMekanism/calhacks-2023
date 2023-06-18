@@ -61,17 +61,26 @@ html, body {
   margin: 0 16px;
 }
 
-/* .card-container {
-  border: 10px solid rgb(255, 0, 0);
+.front {
+  color: black;
+}
+
+.back {
+  color: white;
+}
+
+.card {
+  /* border: 3px solid rgb(255, 0, 0); */
   border-radius: 15px;
-  background-color: blue;
-  margin: 1em;
-} */
+  background-color: #e2e2e2;
+  font-size: 22px;
+  padding: 2.5em;
+  cursor: pointer;
+}
 
 .flip-container {
   perspective: 1000;
   margin: 10px;
-  float: left;
   cursor: pointer;
 }
 
@@ -79,27 +88,9 @@ html, body {
   transition: 0.5s;
   transform-style: preserve-3d;
   position: relative;
+  /* border: 2px solid blue; */
 }
 
-.front {
-  z-index: 2;
-  /* color: white; */
-}
-
-.back {
+.transform {
   transform: rotateY(180deg);
-  color: white;
-}
-
-.flip-card {
-  transform: rotateY(180deg);
-}
-
-.card {
-  border: 3px solid rgb(255, 0, 0);
-  border-radius: 15px;
-  background-color: #f7f4f4;
-  font-size: 22px;
-  padding: 2.5em;
-  margin: 1em;
 }

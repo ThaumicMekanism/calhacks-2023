@@ -9,18 +9,18 @@ const Flashcards = ({ entry }: any): React.JSX.Element => {
   console.log('this is entry', entry)
 
   const handleFlip = (): void => {
-    setToggle(!toggle)
+    setToggle(!toggle);
     card === "front" ? setCard("back") : setCard("front");
   }
 
   return (
-    // <div className={toggle ? "card-container" : "card-container flip-container"}>
-    <div>
-      <div className={toggle ? "card flippable front" : "card flippable back"} onClick={() => handleFlip()} >
-        {card === "front" ? entry.question : entry.answer}
+    <div className="flip-container">
+      <div className={toggle ? "back flippable transform" : "front flippable"} onClick={handleFlip}>
+        <div className={toggle ? "card transform" : "card"}>
+          {card === "front" ? entry.question : entry.answer}
+        </div>
       </div>
     </div>
-    // </div>
   )
 }
 
