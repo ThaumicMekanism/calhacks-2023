@@ -61,18 +61,18 @@ html, body {
   margin: 0 16px;
 }
 
-.card-container {
-  border: 1px solid black;
+/* .card-container {
+  border: 10px solid rgb(255, 0, 0);
   border-radius: 15px;
-  background-color: transparent;
+  background-color: blue;
   margin: 1em;
-}
+} */
 
 .flip-container {
   perspective: 1000;
   margin: 10px;
   float: left;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .flippable {
@@ -81,14 +81,25 @@ html, body {
   position: relative;
 }
 
+.front {
+  z-index: 2;
+  /* color: white; */
+}
+
+.back {
+  transform: rotateY(180deg);
+  color: white;
+}
+
 .flip-card {
   transform: rotateY(180deg);
 }
 
 .card {
-  border: 3px dotted rgb(141, 93, 93);
+  border: 3px solid rgb(255, 0, 0);
   border-radius: 15px;
   background-color: #f7f4f4;
   font-size: 22px;
   padding: 2.5em;
+  margin: 1em;
 }
