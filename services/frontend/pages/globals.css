@@ -29,4 +29,25 @@ body {
   background-color: white;
 }
 
+/* -- flashcards */
+#content-container {
+  width: 75%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 3px red solid;
+}
 
+.card-container {
+  border: 5px dotted black;
+  background-color: blue;
+  margin: 1em;
+}
+
+.card {
+  border: 3px solid black;
+  background-color: white;
+  font-size: 22px;
+}

@@ -1,11 +1,17 @@
-import Link from "next/link";
 import React from 'react';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { } from '../store/authSlice';
 
-const Flashcards = (): React.JSX.Element => {
+const Flashcards = ({ entry }: any): React.JSX.Element => {
+
+  const handleFlip = () => {
+
+  }
+
   return (
-    <div>Render Flashcards</div> // equiv to individual entry
+    <div className="card-container">
+      <div className="card" onClick={() => handleFlip()} >entry</div>
+    </div>
   )
 }
 
