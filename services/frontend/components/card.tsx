@@ -5,7 +5,7 @@ const Card = ({ title, text, onClick }: any) => {
 
   const handleCardClick = () => {
     setIsSelected(!isSelected);
-    onClick();
+    if (onClick) onClick();
   };
 
   return (
