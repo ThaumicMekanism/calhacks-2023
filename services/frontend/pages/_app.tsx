@@ -14,13 +14,13 @@ export default function Home() {
 
     return (
       <>
-        <button type='button'onClick={() => setPage("cards")}>
+        <button type='button' onClick={() => setPage("cards")} style={{ color: "purple "}}>
           cards
         </button>
-        <button type='button' onClick={() => setPage("home")}>
+        <button type='button' onClick={() => setPage("home")} style={{ color: "purple "}}>
           home
         </button>
-        <button type='button' onClick={() => setPage("selection")}>
+        <button type='button' onClick={() => setPage("selection")} style={{ color: "purple "}}>
           selection
         </button>
       </>
