@@ -52,7 +52,7 @@ const HeroV2 = ({ render, setRender }) => {
             </div>
           </div>
 
-          <div id="btn-input-container" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div id="btn-input-container" style={{ padding: "0.5em", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <div>
             <button type="button" style={{ border: "2px solid black", backgroundColor: "white", border: "1px solid black", padding: "8px", borderRadius: '7.5px', marginBottom: "5px" }} onClick={() => setSelect("text")}>Text</button>
             <button type="button" style={{ border: "2px solid black", backgroundColor: "white", border: "1px solid black", padding: "8px", borderRadius: '7.5px', marginBottom: "5px" }} onClick={() => setSelect("pdf")}>PDF</button>
@@ -60,7 +60,7 @@ const HeroV2 = ({ render, setRender }) => {
 
           {select === "text" ?
             <div>
-              <textarea placeholder='Input text here...' value={text} onChange={(e) => handleText(e.target.value)} style={{ height: "300px", width: "300px" }}></textarea>
+              <textarea style={{ margin: "2em" }} placeholder=' Input text here...' value={text} onChange={(e) => handleText(e.target.value)} style={{ height: "300px", width: "300px" }}></textarea>
             </div>
             :
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", bocrder: "3px solid purple", width: "fit-content", padding: "1em" }}>
@@ -91,17 +91,17 @@ const HeroV2 = ({ render, setRender }) => {
 
             <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Students</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <p>The app provides personalized learning and optimized review helping students master concepts efficiently. It tracks progress and enables collaborative learning, making studying engaging and accessible anytime, anywhere.</p>
             </div>
 
             <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Teachers</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <p>The app assists teachers by offering personalized content, progress tracking, and collaborative learning features. It enhances student engagement, simplifies content curation, and provides valuable analytics, allowing educators to tailor instruction and promote effective learning strategies.</p>
             </div>
 
             <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Learners</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <p>The app supports individualized learning journeys with personalized flashcards. Learners can access the app on mobile devices, making learning convenient, engaging, and adaptable to their unique needs.</p>
             </div>
 
           </div>

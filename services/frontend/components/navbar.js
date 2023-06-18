@@ -11,8 +11,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navBar w-full">
-      <nav className="relative flex flex-wrap items-center justify-around py-4 mx-auto lg:justify-around xl:px-0">
+    <div className="navBar w-full" style={{ width: "100%", height: "fit-content" }}>
+      <nav style={{ width: "100%", height: "fit-content" }} className="relative flex items-center justify-around py-4 mx-auto lg:justify-around xl:px-0">
         <Disclosure>
           {({ open }) => (
             <>

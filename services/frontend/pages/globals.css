@@ -93,7 +93,7 @@ html, body, span, #root {
   min-height: 100%;
   max-width: 100%;
   /* border: 3px solid blue; */
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
 }
 
 /* -- flashcards */
@@ -215,12 +215,12 @@ html, body, span, #root {
 .titlename {
   font-weight:900;
   /* margin-left: -1rem; */
-  color: #ffa82d;
+  color: indigo;
   font-size:x-large;
 }
 
 .buttonStarted {
-  background-color: #ffa82d;
+  background-color: rgba(165, 165, 165, 0.8);
 }
 
 .questionText {
@@ -343,12 +343,12 @@ html, body, span, #root {
 .titlename {
   font-weight:900;
   /* margin-left: -1rem; */
-  color: #ffa82d;
+  color: indigo;
   font-size:x-large;
 }
 
 .buttonStarted {
-  background-color: #ffa82d;
+  background-color: rgba(165, 165, 165, 0.8);
 }
 
 .questionText {
