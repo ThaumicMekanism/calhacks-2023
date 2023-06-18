@@ -3,6 +3,7 @@ import { store } from "../store/store";
 import "../pages/globals.css";
 import HomePage from "../pages/homepage"
 import Content from "../pages/ content";
+import Navbar from '../components/navbar';
 import { useState } from 'react';
 
 export default function Home() {
@@ -37,11 +38,9 @@ export default function Home() {
   }
   return (
     <Provider store={store}>
-      <div>
         {renderBtns()}
         {renderHome()}
         {renderCards()}
-      </div>
     </Provider>
   )
 }
