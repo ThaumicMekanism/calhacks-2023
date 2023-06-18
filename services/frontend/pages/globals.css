@@ -91,9 +91,9 @@ html, body, span, #root {
 
 #render-app-container {
   min-height: 100%;
-  width: 100%;
+  max-width: 100%;
   /* border: 3px solid blue; */
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
 }
 
 /* -- flashcards */
@@ -121,13 +121,18 @@ html, body, span, #root {
 }
 
 .back {
-  color: white;
+  color: rgb(8, 53, 167);
 }
 
-.card {
+.flashcard {
   /* border: 3px solid rgb(255, 0, 0); */
-  min-width: fit-content;
-  max-width: 50%;
+  /* min-width: fit-content;
+  max-width: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
   border-radius: 15px;
   background-color: #e2e2e2;
   font-size: 22px;
@@ -209,22 +214,22 @@ html, body, span, #root {
 
 .titlename {
   font-weight:900;
-  margin-left: -1rem;
-  color: #ffa82d;
+  /* margin-left: -1rem; */
+  color: indigo;
   font-size:x-large;
 }
 
 .buttonStarted {
-  background-color: #ffa82d;
+  background-color: rgba(165, 165, 165, 0.8);
 }
 
 .questionText {
-  padding-left: 25rem;
+  /* padding-left: 25rem; */
   padding-bottom: 1rem;
 }
 
 .sectionCards {
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 }
 
 @keyframes pulse {
@@ -239,8 +244,8 @@ html, body, span, #root {
 .fileUpload {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   margin-top: 2rem;
-  padding-left: 26.25rem;
-  padding-right: 26.25rem;
+  /* padding-left: 26.25rem;
+  padding-right: 26.25rem; */
   text-align: center;
   border-radius: 0.375rem;
   cursor: pointer;
@@ -337,22 +342,23 @@ html, body, span, #root {
 
 .titlename {
   font-weight:900;
-  margin-left: -1rem;
-  color: #ffa82d;
+  /* margin-left: -1rem; */
+  color: indigo;
   font-size:x-large;
 }
 
 .buttonStarted {
-  background-color: #ffa82d;
+  background-color: rgba(165, 165, 165, 0.8);
 }
 
 .questionText {
-  padding-left: 25rem;
+  /* padding-left: 25rem; */
   padding-bottom: 1rem;
 }
 
 .sectionCards {
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
+  /* width: 30%; */
 }
 
 @keyframes pulse {
@@ -367,8 +373,8 @@ html, body, span, #root {
 .fileUpload {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   margin-top: 2rem;
-  padding-left: 26.25rem;
-  padding-right: 26.25rem;
+  /* padding-left: 26.25rem;
+  padding-right: 26.25rem; */
   text-align: center;
   border-radius: 0.375rem;
   cursor: pointer;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-const Card = ({ title, text }: any) => {
+const Card = ({ title, text, onClick }: any) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleCardClick = () => {
     setIsSelected(!isSelected);
+    onClick();
   };
 
   return (

@@ -2,7 +2,9 @@ import openai
 import re
 
 openai.organization = "org-UnCuRgsuSHGeQc4B4nULBhuW"
-openai.api_key = "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"
+# openai.api_key = "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"
+# openai.api_key = "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"
+openai.api_key = "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"
 
 def make_flash_cards(prompt):
     completion = openai.ChatCompletion.create(
@@ -14,7 +16,7 @@ def make_flash_cards(prompt):
         {'role': 'assistant', 'content': 'Alright'},
         {'role': 'user', 'content': '{}'.format(prompt)}
     ],
-    temperature = 0  
+    temperature = 0
     )
 
     question_answer = completion['choices'][0]['message']['content']

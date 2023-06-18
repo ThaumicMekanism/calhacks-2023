@@ -5,7 +5,7 @@ import { } from '../store/authSlice';
 import List from "../components/list";
 import Navbar from '../components/navbar';
 
-const Content = (): React.JSX.Element => {
+const Content = ({ render, setRender }: any): React.JSX.Element => {
   return (
     <div id="content-container" className="heroMain flex flex-wrap bg-heroColor">
       <List />
