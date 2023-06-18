@@ -22,6 +22,8 @@ class GetUserInput(Resource):
         response = {
             "id": user_input.id,
             "text": user_input.text,
+            "created_at": user_input.created_at,
+            "updated_at": user_input.updated_at,
             "card_deck_ids": [card_deck.id for card_deck in card_decks]
         }
         return response, 200

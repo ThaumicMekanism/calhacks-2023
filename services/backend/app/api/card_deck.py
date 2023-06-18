@@ -9,11 +9,22 @@ card_deck_namespace = Namespace("card_deck", description="card deck related oper
 @card_deck_namespace.route("/<int:card_deck_id>")
 class GetCardDeckInput(Resource):
     def get(self, card_deck_id: int):
+        card_deck = get_card_deck(card_deck_id)
+        if card_deck is None:
+            return f"Could not find the card deck {card_deck_id}", 404
         cards = get_card_deck_cards(card_deck_id)
         if cards is None:
             return f"Could not find the card deck {card_deck_id}", 404
         card_list = [{"id": card.id, "question": card.question, "answer": card.answer} for card in cards]
-        return card_list, 200
+        response = {
+            "id": card_deck_id,
+            "user_input_id": card_deck.user_input_id,
+            "status": card_deck.status,
+            "created_at": card_deck.created_at,
+            "updated_at": card_deck.updated_at,
+            "cards": card_list,
+        }
+        return response, 200
 
 @card_deck_namespace.route("/")
 class CardDeckList(Resource):
