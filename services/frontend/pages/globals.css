@@ -1,3 +1,4 @@
+/* -- all */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,8 +17,11 @@
   }
 }
 
-body {
+html, body {
   font-family: SpaceGrotesk;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
@@ -31,6 +35,15 @@ body {
 
 /* -- flashcards */
 #content-container {
+  /* width: 75%; */
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed grey;
+}
+
+#list-container {
   width: 75%;
   height: max-content;
   display: flex;
@@ -46,7 +59,6 @@ body {
   padding: 0 10px;
   margin: 0 16px;
 }
-
 
 .card-container {
   border: 5px dotted black;
