@@ -92,7 +92,7 @@ html, body, span, #root {
 #render-app-container {
   min-height: 100%;
   width: 100%;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   padding: 2em;
 }
 

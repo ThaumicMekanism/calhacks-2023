@@ -19,9 +19,9 @@ const HeroV2 = () => {
   }
 
   return (
-      <div className="heroMain flex bg-heroColor" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: "3px solid red", margin: "1em" }}>
+      <div className="heroMain flex bg-heroColor" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", /* border: "3px solid red", */ margin: "1em" }}>
 
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", border: "3px solid purple", width: "100%", padding: "2em" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", /* border: "3px solid purple", */ width: "100%", padding: "2em" }}>
           <div className="p-10 w-fit mb-8">
             <div className="pt-16">
               <p className="py-2 text-xl leading-normal text-gray-500 lg:text-2xl xl:text-2xl dark:text-gray-300">
@@ -63,22 +63,22 @@ const HeroV2 = () => {
 
         </div>
 
-        <div className="relative bg-heroColor" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", borderRadius: "20px", padding: "1em"}}>
+        <div className="relative bg-heroColor" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", borderRadius: "20px", padding: "1em", position: "relative" }}>
           <Image src={Background} alt="Background" objectFit="cover" style={{ zIndex: 3, overflow: "hidden", maxWidth: "100%", display: "flex", borderRadius: "20px", padding: "1em"}}/>
 
-          <div className="bg-text" style={{ display: "flex", alignItems: "center", justifyContent: "center", border: "3px solid red", zIndex: "5px", flex: "100px 1 0", marginBottom: "300px" }}>
+          <div className="bg-text" style={{ position: "absolute", top: 0, left: 0, zIndex: 4, display: "flex", alignItems: "center", justifyContent: "center", /* border: "3px solid red", */ flex: "100px 1 0", marginBottom: "300px", padding: "1em" }}>
 
-            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white">
+            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Students</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
             </div>
 
-            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white">
+            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Teachers</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
             </div>
 
-            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white">
+            <div className="bg-inner-text text-2xl leading-snug tracking-tight text-gray-800 lg:text-xl lg:leading-tight xl:text-xl xl:leading-none dark:text-white" style={{ padding: "2em", color: "#84848D" }}>
               <h4 className="font-bold" style={{ textDecoration: "underline" }}>For Learners</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
             </div>
