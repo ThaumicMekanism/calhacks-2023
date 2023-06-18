@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getData = () => {
-  axios.get('')
+  axios.get(/* user_input/id OR card_deck/id */ '')
     .then((res: any) => {
       console.log('successful retrieval of data')
     })
@@ -10,14 +10,13 @@ export const getData = () => {
     })
 }
 
-export const postData = (/* object */) => {
-  axios.post('', /* object */)
+export const postData = (obj: {user_input: string}) => {
+  axios.post('http://localhost:5004/user_input', {data: obj})
     .then((res: any) => {
-      console.log('data successfully posted')
-      getData();
+      console.log('data successfully posted', res.data)
     })
     .catch((err: unknown) => {
-      console.log('failed to post data')
+      console.log('failed to post data', err)
     })
 }
 

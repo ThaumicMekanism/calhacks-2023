@@ -7,11 +7,8 @@ import Navbar from '../components/navbar';
 
 const Content = (): React.JSX.Element => {
   return (
-    <div>
-      <Navbar />
-      <div id="content-container" className="heroMain flex flex-wrap bg-heroColor">
-        <List />
-      </div>
+    <div id="content-container" className="heroMain flex flex-wrap bg-heroColor">
+      <List />
     </div>
   )
 }
