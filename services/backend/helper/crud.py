@@ -37,6 +37,11 @@ def update_card_deck_state(card_deck_id: int, status: str):
     card_deck.status = status
     db.session.commit()
 
+def get_all_user_inputs():
+    """get all user inputs from the db"""
+    user_inputs = UserInput.query.all()
+    return user_inputs
+
 def get_user_input(user_input_id: int):
     """get user input from the db"""
     user_input = UserInput.query.get(user_input_id)
@@ -57,6 +62,11 @@ def get_card_deck_cards(card_deck_id: int):
     card_deck = CardDeck.query.get(card_deck_id)
     cards = card_deck.cards
     return cards
+
+def get_all_card_decks():
+    """get all card decks from the db"""
+    card_decks = CardDeck.query.all()
+    return card_decks
 
 
 
