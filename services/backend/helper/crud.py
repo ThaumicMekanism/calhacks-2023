@@ -12,7 +12,7 @@ def get_all_cards(card_deck_id):
 
 def add_user_input(user_input: str):
     """add user input to the db and return the id"""
-    user_input = UserInput(user_input=user_input)
+    user_input = UserInput(text=user_input)
     db.session.add(user_input)
     db.session.commit()
     return user_input.id
