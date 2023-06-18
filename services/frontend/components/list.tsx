@@ -3,12 +3,12 @@ import { useAppSelector } from '../store/hooks';
 import Flashcards from './flashcards';
 
 const List = (): JSX.Element => {
-  const { dummyData } = useAppSelector(state => state.flashy);
+  const { aiData } = useAppSelector(state => state.flashy);
   return (
     <div id="list-container">
-      {dummyData.length > 0 ? dummyData.map((entry, idx) => {
+      {aiData.length > 0 ? aiData.map((entry, idx) => {
         return <Flashcards entry={entry} key={idx}></Flashcards>
-      }) : <p>No Flashcards Generated</p>}
+      }) : <p style={{ fontSize: "30px" }}>Generating Flashcards...</p>}
     </div>
   )
 };

@@ -121,13 +121,18 @@ html, body, span, #root {
 }
 
 .back {
-  color: white;
+  color: rgb(8, 53, 167);
 }
 
 .flashcard {
   /* border: 3px solid rgb(255, 0, 0); */
-  min-width: fit-content;
-  max-width: 50%;
+  /* min-width: fit-content;
+  max-width: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
   border-radius: 15px;
   background-color: #e2e2e2;
   font-size: 22px;

@@ -9,6 +9,7 @@ const initialState = {
     {question: "Q5", answer: "A5"},
     {question: "Q6", answer: "A6"},
   ],
+  aiData: [],
   render: "home",
 }
 
@@ -19,11 +20,14 @@ export const authSlice = createSlice({
     updateDummyData: (state, action) => {
       state.dummyData = action.payload;
     },
+    updateAIData: (state, action) => {
+      state.aiData = action.payload;
+    },
     updateRender: (state, action) => {
       state.render = action.payload;
     },
   },
 });
 
-export const { updateDummyData, updateRender } = authSlice.actions;
+export const { updateDummyData, updateRender, updateAIData } = authSlice.actions;
 export default authSlice.reducer;

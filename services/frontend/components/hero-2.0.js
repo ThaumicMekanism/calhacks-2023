@@ -7,6 +7,8 @@ import { postData } from "../helpers/methods";
 // import { useAppSelector, useAppDispatch } from '../store/hooks';
 // import { updateRender } from '../store/authSlice';
 // import Selection from "../pages/selection";
+import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { updateAIData } from '../store/authSlice';
 
 const HeroV2 = ({ render, setRender }) => {
   const [select, setSelect] = useState("text");
@@ -14,18 +16,26 @@ const HeroV2 = ({ render, setRender }) => {
 
   // const { render } = useAppSelector(state => state.flashy)
   // const dispatch = useAppDispatch();
+  const { aiData } = useAppSelector(state => state.flashy)
+  const dispatch = useAppDispatch();
 
   const handleText = (e) => {
     console.log('this is text', e)
     setText(e)
   }
+  console.log('UGHKJHDFGHJKF', aiData)
 
   const handleSubmit = () => {
     console.log('this is being submitted', text)
-    postData({ user_input: text })
+    postData({ user_input: text }, (data) => {
+      dispatch(updateAIData(data.cards))
+    })
     // dispatch(updateRender("selection"))
     setRender("selection")
   }
+
+
+
 
   return (
       <div className="heroMain flex bg-heroColor" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", /* border: "3px solid red", */ margin: "1em" }}>

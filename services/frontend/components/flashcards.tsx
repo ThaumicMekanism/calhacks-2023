@@ -17,7 +17,7 @@ const Flashcards = ({ entry }: any): React.JSX.Element => {
     <div className="flip-container">
       <div className={toggle ? "back flippable transform" : "front flippable"} onClick={handleFlip}>
         <div className={toggle ? "flashcard transform" : "flashcard"}>
-          {card === "front" ? entry.question : entry.answer}
+          {card === "front" ? `Q: ${entry.question}` : `A: ${entry.answer}`}
         </div>
       </div>
     </div>
