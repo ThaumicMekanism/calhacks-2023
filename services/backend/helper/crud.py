@@ -62,13 +62,18 @@ def get_card_deck_cards(card_deck_id: int):
     card_deck = CardDeck.query.get(card_deck_id)
     if not card_deck:
         return None
-    cards = card_deck.cards
+    cards = db.session.query(Card).filter(Card.card_deck_id == card_deck_id)
     return cards
 
 def get_all_card_decks():
     """get all card decks from the db"""
     card_decks = CardDeck.query.all()
     return card_decks
+
+def get_all_cards():
+    """get all cards from the db"""
+    cards = Card.query.all()
+    return cards
 
 
 
