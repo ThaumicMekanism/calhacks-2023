@@ -29,6 +29,7 @@ body {
   background-color: white;
 }
 
+<<<<<<< Updated upstream
 /* -- flashcards */
 #content-container {
   width: 75%;
@@ -39,6 +40,15 @@ body {
   align-items: center;
   border: 3px red solid;
 }
+=======
+.heroMain {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 10px;
+  margin: 0 16px;
+}
+
+>>>>>>> Stashed changes
 
 .card-container {
   border: 5px dotted black;
