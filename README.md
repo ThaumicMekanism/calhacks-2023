@@ -1,47 +1,44 @@
-# Chat App: a real time chat application
+# Flashy: AI powered flash cards
 
-![](/ReadMe_images/logo.jpg)
+Flashy uses the OpenAI API to deliver curated flash cards for users.
 
-This repo was created to help users Dockerize Flask + React + PostgreSQL application that uses HTTP and WebSocket communication protocols.
+The app takes in user input such as school notes or text from textbooks and curates flash cards with questions and answers. Using Open AI's gpt-3.5-turbo, we are able to create study materials using AI, automating the tedious task of making flash cards from scratch.
 
-The app is a simple chat application that is built using React (front-end), Flask REST (back-end), Flask WebSocket (back-end), and PostgreSQL (db).
+In the near future, we plan to add supoort for pdf's, longer tetxs and greater control over flashcard content.
 
-The chat app gets all historical messages on the rendering of the page, posts new messages to the database when a user submits the message and also updates the messages posted in real-time for all the users to see without re-rendering the page. (see demo below)
+# Tech Stack
 
-# Tech Stack 📚
+**Client:** TypeScript, ReactJS, Tailwind
 
-**Client:** JavaScript, ReactJS, socket.io
+**Server:** Python, Flask, Nginx, SQLAlchemy
 
-**Server:** Python, Flask, Flask-RESTX, gunicorn, SQLAlchemy, flask-socketio
+**Database:** Redis, PostgreSQL
 
-**Database:** PostgreSQL
+**AI:** OpenAI API
 
 **Other:** Docker
 
-# Folder Structure
-
-![](/ReadMe_images/Blank%20diagram.jpeg)
 
 # Configuring the repo for the first time and running the application
 
-## Docker
+## Deploy this application locally
 
-To be able to run this project you will need Docker Desktop installed on your computer. Docker installation instructions: `https://www.docker.com/products/docker-desktop/`
+The instructions below will allow you to run this project on your local computer using 
 
-The instructions below will allow you to run this project on your local computer using **docker-compose**
+**make build**
 
 1. Run the following command in the terminal to download a copy of the repo to your local machine
 
 ```bash
-  git clone https://github.com/adrianhuber17/chat-app.git
+  git clone https://github.com/ThaumicMekanism/calhacks-2023.git
 ```
 
-- Navigate into the new sub-folder created called **chat-app**.
+- Navigate into the new sub-folder created called **calhacks-2023**.
 
 2. After the project repo is downloaded navigate into the project directory
 
 ```bash
-  cd chat-app
+  cd calhacks-2023
 ```
 
 3. Manually open Docker desktop or run the command below to open Docker
@@ -50,59 +47,26 @@ The instructions below will allow you to run this project on your local computer
  open -a Docker
 ```
 
-4. Once the Docker desktop is runnning, type the command below to create and start the container in detached mode and build the image
+4. Once the Docker desktop is runnning, type the command below to create and start the containerized application
 
 ```bash
-  docker-compose up -d --build
+  make build
 ```
 
 At this point the container with the app should be running in your local computer
 
-Services are running on **Port 3000** (front-end React), **Port 5001** (back-end REST), **Port 5004** (back-end WebSocket). Please make sure you have no other app running on these ports
+Services are running on **Port 3000** (front-end React), **Port 5001** (back-end REST). Please make sure you have no other app running on these ports
 
 5. Run the following command to create and reset the Messages table in the database.
 
 - This command can be used any time you want to delete and reset all the data in the database
 
 ```bash
-docker-compose exec backend python manage.py reset_db
+make clean
 ```
 
-Open a browser to the local host **http://localhost:3000/** and start enjoying the app
+Open a browser to the local host **http://localhost:3000/** and start using the app!
 
 # Demo
 
 The browser on the left is Google Chrome and the Browser on the right is Firefox. The demo below displays a chat communication between two users using WebSocket communication. Notice that when a message is sent by one user, the other user receives the message without having to re-render the component or the page. Also the mssages being sent are saved to the database, so when the page is re-loaded or opened on a new tab all the historical messages are fetched on the rendering of the page.
-
-![](/ReadMe_images/demo.gif)
-
-## Endpoints
-
-### /messages
-
-The **/messages** endopint can take a GET and a POST as shown below. POST will save the message to the database and GET will fetch all messages from the database
-
-```bash
-curl --header "Content-Type: application/json" \
---request POST \
---data '{"text":"Second message!"}' \
-http://127.0.0.1:5004/messages
-```
-
-![](/ReadMe_images/post_message.png)
-
-```bash
-curl "http://127.0.0.1:5004/messages"
-```
-
-![](/ReadMe_images/get_message.png)
-
-### /ping
-
-There is also a second endpoint to test a simple response and confirm that the app is running
-
-```bash
-curl  http://127.0.0.1:5004/ping
-```
-
-![](/ReadMe_images/curl_ping.png)

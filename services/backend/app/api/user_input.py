@@ -1,7 +1,7 @@
 from flask_restx import Resource, Namespace, fields
 from flask import request,jsonify
 from app import db
-from helper.crud import add_user_input, get_all_user_inputs, get_user_input, update_card_deck_state, get_card_decks_for_user_input
+from helper.crud import add_user_input, get_all_user_inputs, get_user_input, update_card_deck_state, get_card_decks_for_user_input, add_card_deck, add_card
 from helper.analyze import make_flash_cards
 
 user_input_namespace = Namespace("user_input", description="user input related operations")
@@ -22,6 +22,8 @@ class GetUserInput(Resource):
         response = {
             "id": user_input.id,
             "text": user_input.text,
+            "created_at": user_input.created_at,
+            "updated_at": user_input.updated_at,
             "card_deck_ids": [card_deck.id for card_deck in card_decks]
         }
         return response, 200
@@ -30,7 +32,7 @@ class GetUserInput(Resource):
 class UserInputList(Resource):
     def get(self):
         user_inputs = get_all_user_inputs()
-        user_input_list = [{"id": user_input.id, "text": user_input.text} for user_input in user_inputs]
+        user_input_list = [{"id": user_input.id, "text": user_input.text, "created_at": user_input.created_at, "updated_at": user_input.updated_at} for user_input in user_inputs]
         return user_input_list, 200
 
     def post(self):
