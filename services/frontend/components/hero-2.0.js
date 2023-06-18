@@ -52,11 +52,10 @@ const HeroV2 = ({ render, setRender }) => {
             </div>
           </div>
 
-
+          <div id="btn-input-container" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <div>
-            <button type="button" style={{ border: "2px solid black" }} onClick={() => setSelect("text")}>Text</button>
-            <button type="button" style={{ border: "2px solid black" }} onClick={() => setSelect("pdf")}>PDF</button>
-            <button type="button" onClick={() => handleSubmit()}>Submit</button>
+            <button type="button" style={{ border: "2px solid black", backgroundColor: "white", border: "1px solid black", padding: "8px", borderRadius: '7.5px', marginBottom: "5px" }} onClick={() => setSelect("text")}>Text</button>
+            <button type="button" style={{ border: "2px solid black", backgroundColor: "white", border: "1px solid black", padding: "8px", borderRadius: '7.5px', marginBottom: "5px" }} onClick={() => setSelect("pdf")}>PDF</button>
           </div>
 
           {select === "text" ?
@@ -79,6 +78,9 @@ const HeroV2 = ({ render, setRender }) => {
               </div>
             </div>
           }
+                      <button type="button" style={{ border: "2px solid black", backgroundColor: "white", border: "1px solid white", padding: "8px", borderRadius: '7.5px', marginBottom: "5px" }} onClick={() => handleSubmit()}>Submit</button>
+
+          </div>
 
         </div>
 
