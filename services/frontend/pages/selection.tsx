@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const Selection = () => {
   return (
-    <div className="sectionCards">
+    <div className="sectionCards" /* style={{ display: "flex", alignItems: "center", justifyContent: "center" }} */>
       <h1 className="questionText text-2xl font-bold">What is your goal for today?</h1>
       <div className="section">
         <Card title="Flashcards" text="Elevate learning with interactive flashcards for easy review and retention. Dynamic and engaging, they enhance understanding and memorization for exams, presentations, and reinforcing knowledge."/>
