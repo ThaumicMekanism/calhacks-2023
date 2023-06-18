@@ -38,9 +38,12 @@ export default function Home() {
   }
   return (
     <Provider store={store}>
-        {renderBtns()}
-        {renderHome()}
-        {renderCards()}
+      <Navbar/>
+        <div id="render-app-container">
+          {renderBtns()}
+          {renderHome()}
+          {renderCards()}
+        </div>
     </Provider>
   )
 }
