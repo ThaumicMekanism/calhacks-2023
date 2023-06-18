@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import Container from "./container";
 import Background from "../assets/pink-blue-bg.png";
-import postData from "../helpers/methods";
+import { postData } from "../helpers/methods";
 
 const HeroV2 = () => {
   const [select, setSelect] = useState("text");
@@ -11,21 +11,11 @@ const HeroV2 = () => {
   const handleText = (e) => {
     console.log('this is text', e)
     setText(e)
-    console.log(postData)
+  }
 
-    // send in json object , key is user_input: STRING
-    // user_input
-    // export const postData = (/* object */) => {
-    //   axios.post('', /* object */)
-    //     .then((res: any) => {
-    //       console.log('data successfully posted')
-    //       getData();
-    //     })
-    //     .catch((err: unknown) => {
-    //       console.log('failed to post data')
-    //     })
-    // }
-
+  const handleSubmit = () => {
+    console.log('this is being submitted', text)
+    postData({ user_input: text })
   }
 
   return (
@@ -47,6 +37,7 @@ const HeroV2 = () => {
           <div>
             <button type="button" style={{ border: "2px solid black" }} onClick={() => setSelect("text")}>Text</button>
             <button type="button" style={{ border: "2px solid black" }} onClick={() => setSelect("pdf")}>PDF</button>
+            <button type="button" onClick={() => handleSubmit()}>Submit</button>
           </div>
 
           {select === "text" ?
