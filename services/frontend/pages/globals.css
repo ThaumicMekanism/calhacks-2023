@@ -62,13 +62,14 @@ table {
   }
 }
 
-html, body, #root {
+html, body, span, #root {
   font-family: SpaceGrotesk;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100%;
   width: 100%;
+  color: black;
 }
 
 @font-face {
@@ -84,8 +85,8 @@ html, body, #root {
   /* border-top-left-radius: 20px;
   border-top-right-radius: 20px; */
   border-radius: 20px;
-  padding: 0 10px;
-  margin: 0 16px;
+  /* padding: 0 10px;
+  margin: 0 16px; */
 }
 
 #render-app-container {

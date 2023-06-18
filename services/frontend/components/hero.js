@@ -3,8 +3,8 @@ import Container from "./container";
 
 const Hero = () => {
   return (
-    <>   
-    <div> 
+    <>
+    <div>
       <div className="heroMain flex flex-wrap bg-heroColor">
         <div className="lg:w-2/3">
             <div className="pl-20 w-fit mb-8">
@@ -33,7 +33,7 @@ const Hero = () => {
         </div>
     </div>
     </div>
-      
+
     </div>
     <div className="bg-violet-700">
         <h1 className="text-2xl text-yellow-500	">Hello</h1>
