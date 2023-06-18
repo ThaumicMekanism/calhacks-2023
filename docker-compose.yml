@@ -19,6 +19,13 @@ services:
       - SECRET_KEY=secret
     depends_on:
       - db
+      - redis
+
+  redis:
+    image: redislabs/redismod
+    container_name: redis
+    ports:
+      - '6379:6379'
 
   db:
     build:
