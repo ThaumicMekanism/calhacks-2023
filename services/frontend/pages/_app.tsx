@@ -28,21 +28,18 @@ export default function Home() {
   }
   function renderCards() {
     if (page !== "cards") return null;
-
     return (
       <Content />
     )
   }
   function renderHome() {
     if (page !== "home") return null;
-
     return (
       <HomePage />
     )
   }
   function renderSelection() {
     if (page === "cards" || page === "home") return null
-
     return (
       <Selection />
     )
