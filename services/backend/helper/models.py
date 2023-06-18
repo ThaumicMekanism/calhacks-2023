@@ -16,7 +16,7 @@ class UserInput(db.Model, TrackTimeMixin):
     card_decks = db.relationship("CardDeck", backref=db.backref("card_decks", uselist=False))
 
 class CardDeck(db.Model, TrackTimeMixin):
-    __tablename__ = "card_deck"
+    __tablename__ = "card_decks"
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     status = db.Column(db.Text())
     user_input_id = db.Column(db.Integer,db.ForeignKey("user_inputs.id"))
@@ -27,4 +27,6 @@ class Card(db.Model, TrackTimeMixin):
     __tablename__ = "cards"
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     card_deck_id = db.Column(db.Integer,db.ForeignKey("card_decks.id"))
-    card_deck = db.relationship("CardDeck", backref=db.backref("card_decks"))
+    card_deck = db.relationship("CardDeck")
+    question = db.Column(db.Text())
+    answer = db.Column(db.Text())

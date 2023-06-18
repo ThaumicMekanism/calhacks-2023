@@ -1,6 +1,6 @@
 from app import db
-from helper.models import Message
-from helper.models import CardDeck
+# from helper.models import Message
+from helper.models import CardDeck, UserInput, Card
 from sqlalchemy import asc
 
 def get_all_cards(card_deck_id):
@@ -19,7 +19,7 @@ def add_user_input(user_input: str):
 
 def add_card_deck(user_input_id: int):
     """add card deck to the db and return the id"""
-    card_deck = CardDeck(user_input_id=user_input_id)
+    card_deck = CardDeck(user_input_id=user_input_id, status="pending")
     db.session.add(card_deck)
     db.session.commit()
     return card_deck.id
@@ -60,6 +60,8 @@ def get_card_status(card_deck_id: int):
 def get_card_deck_cards(card_deck_id: int):
     """get card deck cards from the db"""
     card_deck = CardDeck.query.get(card_deck_id)
+    if not card_deck:
+        return None
     cards = card_deck.cards
     return cards
 
@@ -75,20 +77,20 @@ def get_all_card_decks():
     
 
 
-def add_message(text):
-    "add a message to the db"
+# def add_message(text):
+#     "add a message to the db"
 
-    if text.strip() == "":
-        return {"status":"error","message":"text is empty"}
+#     if text.strip() == "":
+#         return {"status":"error","message":"text is empty"}
 
-    message = Message(text=text)
-    db.session.add(message)
-    db.session.commit()
-    message_json = {"status":"ok",
-                    "message":{"id":message.id,
-                                "text":message.text,
-                                "date":f"{message.date.year}-{message.date.month}-{message.date.day}"
-                                }
-                    }
+#     message = Message(text=text)
+#     db.session.add(message)
+#     db.session.commit()
+#     message_json = {"status":"ok",
+#                     "message":{"id":message.id,
+#                                 "text":message.text,
+#                                 "date":f"{message.date.year}-{message.date.month}-{message.date.day}"
+#                                 }
+#                     }
     
-    return message_json
+#     return message_json

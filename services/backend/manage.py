@@ -2,6 +2,7 @@
 
 from app import create_app,db
 from flask.cli import FlaskGroup
+from helper.models import CardDeck, UserInput, Card
 # from helper.models import Message
 
 app = create_app()
@@ -13,9 +14,9 @@ def populate_db():
     # message = Message(text="First message!")
     # db.session.add(message)
     # db.session.commit()
-    user_input = UserInput(user_input="First user input!")
+    user_input = UserInput(text="First user input!")
     db.session.add(user_input)
-    card_deck = CardDeck(user_input_id=user_input.id)
+    card_deck = CardDeck(user_input_id=user_input.id, status="processed")
     db.session.add(card_deck)
     card = Card(card_deck_id=card_deck.id, question="First question", answer="First answer")
     db.session.add(card)
