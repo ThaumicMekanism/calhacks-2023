@@ -10,6 +10,7 @@ card_deck_namespace = Namespace("card_deck", description="card deck related oper
 class GetCardDeckInput(Resource):
     def get(self, card_deck_id: int):
         cards = get_card_deck_cards(card_deck_id)
+        print(cards)
         if cards is None:
             return f"Could not find the card deck {card_deck_id}", 404
         card_list = [{"id": card.id, "question": card.question, "answer": card.answer} for card in cards]
