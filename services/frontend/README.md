@@ -1,54 +1,34 @@
-# With Docker
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## How to use
+## Getting Started
 
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/segmentio/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
+First, run the development server:
 
 ```bash
-npx create-next-app --example with-docker with-docker-app
+npm run dev
 # or
-yarn create next-app --example with-docker with-docker-app
+yarn dev
+# or
+pnpm dev
 ```
 
-### Download manually
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Download the example:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-docker
-cd with-docker
-```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Build it with docker:
+## Learn More
 
-```bash
-# build
-docker build -t next-app .
-# or, use multi-stage builds to build a smaller docker image
-docker build -t next-app -f ./Dockerfile.multistage .
-```
+To learn more about Next.js, take a look at the following resources:
 
-Run it:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-docker run --rm -it \
-  -p 3000:3000 \
-  -e "API_URL=https://example.com" \
-  next-app
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
+## Deploy on Vercel
 
-```bash
-now --docker -e API_URL="https://example.com"
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## The idea behind the example
-
-This example show how to set custom environment variables for your **docker application** at runtime.
-
-The `dockerfile` is the simplest way to run Next.js app in docker, and the size of output image is `173MB`. However, for an even smaller build, you can do multi-stage builds with `dockerfile.multistage`. The size of output image is `85MB`.
-
-You can check the [Example Dockerfile for your own Node.js project](https://github.com/mhart/alpine-node/tree/43ca9e4bc97af3b1f124d27a2cee002d5f7d1b32#example-dockerfile-for-your-own-nodejs-project) section in [mhart/alpine-node](https://github.com/mhart/alpine-node) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
