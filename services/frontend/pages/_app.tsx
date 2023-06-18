@@ -14,6 +14,7 @@ export default function Home() {
   // const { render } = useAppSelector(state => state.flashy)
   // const dispatch = useAppDispatch();
 
+<<<<<<< Updated upstream
   // function renderBtns() {
   //   if (page !== null) return null;
 
@@ -66,6 +67,39 @@ export default function Home() {
         <Content render={render} setRender={setRender} />
       )
     }
+=======
+    return (
+      <>
+        <button type='button' onClick={() => setPage("cards")} style={{ color: "purple "}}>
+          cards
+        </button>
+        <button type='button' onClick={() => setPage("home")} style={{ color: "purple "}}>
+          home
+        </button>
+        <button type='button' onClick={() => setPage("selection")} style={{ color: "purple "}}>
+          selection
+        </button>
+      </>
+    )
+  }
+  function renderCards() {
+    if (page !== "cards") return null;
+    return (
+      <Content />
+    )
+  }
+  function renderHome() {
+    if (page !== "home") return null;
+    return (
+      <HomePage />
+    )
+  }
+  function renderSelection() {
+    if (page === "cards" || page === "home") return null
+    return (
+      <Selection />
+    )
+>>>>>>> Stashed changes
   }
   return (
     <Provider store={store}>
