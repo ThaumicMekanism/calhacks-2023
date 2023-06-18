@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./container";
 import Background from "../assets/pink-blue-bg.png";
 import { postData } from "../helpers/methods";
+// import { useAppSelector, useAppDispatch } from '../store/hooks';
+// import { updateRender } from '../store/authSlice';
+// import Selection from "../pages/selection";
 
-const HeroV2 = () => {
+const HeroV2 = ({ render, setRender }) => {
   const [select, setSelect] = useState("text");
   const [text, setText] = useState("");
+
+  // const { render } = useAppSelector(state => state.flashy)
+  // const dispatch = useAppDispatch();
 
   const handleText = (e) => {
     console.log('this is text', e)
@@ -16,6 +23,8 @@ const HeroV2 = () => {
   const handleSubmit = () => {
     console.log('this is being submitted', text)
     postData({ user_input: text })
+    // dispatch(updateRender("selection"))
+    setRender("selection")
   }
 
   return (
