@@ -1,7 +1,7 @@
 from flask_restx import Api
 from app.api.ping import ping_namespace
 from app.api.pong import pong_namespace
-from app.api.user_inputs import user_input_namespace
+from app.api.user_input import user_input_namespace
 from app.api.card_decks import card_deck_namespace
 
 api = Api(version="1.0", title="APIs", doc="/docs/")

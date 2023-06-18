@@ -2,7 +2,7 @@
 
 from app import create_app,db
 from flask.cli import FlaskGroup
-from helper.models import Message
+# from helper.models import Message
 
 app = create_app()
 cli = FlaskGroup(create_app=create_app)

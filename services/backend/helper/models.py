@@ -6,8 +6,8 @@ from sqlalchemy import Column, Integer, DateTime, ForeignKey
 
 class TrackTimeMixin:
 
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime, server_default=func.now(), onupdate=datetime.now)
+    created_at = db.Column(DateTime, server_default=func.now())
+    updated_at = db.Column(DateTime, server_default=func.now(), onupdate=datetime.datetime.now)
 
 class UserInput(db.Model, TrackTimeMixin):
     __tablename__ = "user_inputs"
