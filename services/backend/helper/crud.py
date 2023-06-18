@@ -47,6 +47,11 @@ def get_user_input(user_input_id: int):
     user_input = UserInput.query.get(user_input_id)
     return user_input
 
+def get_card_decks_for_user_input(user_input_id: int):
+    """get card decks for user input from the db"""
+    card_decks = CardDeck.query.filter(CardDeck.user_input_id == user_input_id).order_by(asc(CardDeck.id))
+    return card_decks
+
 def get_card_deck(card_deck_id: int):
     """get card deck from the db"""
     card_deck = CardDeck.query.get(card_deck_id)

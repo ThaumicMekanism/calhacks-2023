@@ -1,7 +1,7 @@
 from flask_restx import Resource, Namespace, fields
 from flask import request,jsonify
 from app import db
-from helper.crud import add_user_input, get_all_user_inputs, get_user_input, update_card_deck_state
+from helper.crud import add_user_input, get_all_user_inputs, get_user_input, update_card_deck_state, get_card_decks_for_user_input
 from helper.analyze import make_flash_cards
 
 user_input_namespace = Namespace("user_input", description="user input related operations")
@@ -16,7 +16,15 @@ class GetUserInput(Resource):
         user_input = get_user_input(user_input_id)
         if not user_input:
             return f"Could not find the user input {user_input_id}", 404
-        return user_input.text, 200
+
+        card_decks = get_card_decks_for_user_input(user_input_id)
+
+        response = {
+            "id": user_input.id,
+            "text": user_input.text,
+            "card_deck_ids": [card_deck.id for card_deck in card_decks]
+        }
+        return response, 200
 
 @user_input_namespace.route("/")
 class UserInputList(Resource):
