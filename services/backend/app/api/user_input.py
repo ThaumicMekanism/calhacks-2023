@@ -28,7 +28,7 @@ class GetUserInput(Resource):
         }
         return response, 200
 
-@user_input_namespace.route("/")
+@user_input_namespace.route("/", strict_slashes=False)
 class UserInputList(Resource):
     def get(self):
         user_inputs = get_all_user_inputs()
@@ -38,6 +38,7 @@ class UserInputList(Resource):
     def post(self):
         """add user input to the db and return the id"""
         post_data = request.get_json()
+        print(post_data)
         text = post_data.get('user_input')
         user_input_id = add_user_input(text)
         card_deck_id = add_card_deck(user_input_id)
