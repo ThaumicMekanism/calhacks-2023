@@ -30,10 +30,10 @@ class UserInputList(Resource):
         post_data = request.get_json()
         text = post_data.get('user_input')
         user_input_id = add_user_input(text)
+        card_deck_id = add_card_deck(user_input_id)
     
         cards = make_flash_cards(text)
 
-        card_deck_id = add_card_deck(user_input_id)
         update_card_deck_state(card_deck_id, "processed")
 
         for card in cards:
@@ -41,4 +41,9 @@ class UserInputList(Resource):
             answer = card[1]
             add_card(card_deck_id, question, answer)
 
-        return user_input_id, 200
+        response = {
+            "user_input_id": user_input_id,
+            "card_deck_id": card_deck_id,
+        }
+
+        return response, 200
