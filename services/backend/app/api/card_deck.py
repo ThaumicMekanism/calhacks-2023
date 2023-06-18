@@ -1,7 +1,7 @@
 from flask_restx import Resource, Namespace, fields
 from flask import request,jsonify
 from app import db
-from helper.crud import add_user_input, get_card_deck_cards, get_all_card_decks
+from helper.crud import add_user_input, get_card_deck_cards, get_card_deck, get_all_card_decks
 from helper.analyze import make_flash_cards
 
 card_deck_namespace = Namespace("card_deck", description="card deck related operations")
